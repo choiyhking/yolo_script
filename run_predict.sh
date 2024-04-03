@@ -40,7 +40,7 @@ for cmd in "${!command_model_map[@]}"; do
     if [ "$device_option" == "cpu" ]; then
         result_file="predict_${cmd}_cpu.log"
     else # GPU
-	    result_file="predict_${cmd}_gpu.log"
+	result_file="predict_${cmd}_gpu.log"
     fi
     
     echo "Start [[${cmd}]]..."
