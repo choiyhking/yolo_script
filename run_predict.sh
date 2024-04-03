@@ -36,9 +36,14 @@ echo ""
 
 for cmd in "${!command_model_map[@]}"; do
     model=${command_model_map[$cmd]}
-    result_file="predict_$cmd.log"
     
-    echo "Start $cmd..."
+    if [ "$device_option" == "cpu" ]; then
+        result_file="predict_${cmd}_cpu.log"
+    else # GPU
+	    result_file="predict_${cmd}_gpu.log"
+    fi
+    
+    echo "Start [[${cmd}]]..."
     yolo $cmd predict model=$model source='./images' device=$device_option | awk '$1 == "image" {print $1, $2, $NF}' >> $result_file
     echo "completed!"
 
