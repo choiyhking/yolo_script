@@ -14,3 +14,4 @@ for cmd in "${!command_model_map[@]}"; do
         echo "$i is completed for $model!"
     done
 done
+#test
