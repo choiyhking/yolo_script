@@ -12,7 +12,7 @@ command_model_map["pose"]="yolov8n-pose.pt"
 
 # You have to check and modify this option!!
 # "cpu" or "0"(GPU)
-device_option=0
+device_option=cpu
 
 if [ "$device_option" == "cpu" ]; then
     echo "Current device option is CPU."
