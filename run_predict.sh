@@ -51,7 +51,7 @@ for cmd in "${!command_model_map[@]}"; do
     echo "completed!"
 
     echo "<Statistics>"
-    stats=$(python3 cal.py $result_file)
+    stats=$(python3 cal.py ./results/$result_file)
     echo "$stats" >> ./results/$result_file
     echo "$stats"
     echo ""
