@@ -52,7 +52,7 @@ for cmd in "${!command_model_map[@]}"; do
 
     echo "<Statistics>"
     stats=$(python3 cal.py $result_file)
-    echo "$stats" >> $result_file
+    echo "$stats" >> ./results/$result_file
     echo "$stats"
     echo ""
 done
