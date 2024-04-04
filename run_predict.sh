@@ -44,7 +44,7 @@ for cmd in "${!command_model_map[@]}"; do
     fi
     
     echo "Start [[${cmd}]]..."
-    # 2>/dev/null is to remove model download progress bar
+    # "2>/dev/null" is to remove model download progress bar
     yolo $cmd predict model=$model source='./images' device=$device_option 2>/dev/null | awk '$1 == "image" {print $1, $2, $NF}' >> $result_file
     echo "completed!"
 
