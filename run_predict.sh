@@ -34,6 +34,8 @@ else
 fi
 echo ""
 
+mkdir results
+
 for cmd in "${!command_model_map[@]}"; do
     model=${command_model_map[$cmd]}
     
@@ -45,7 +47,7 @@ for cmd in "${!command_model_map[@]}"; do
     
     echo "Start [[${cmd}]]..."
     # "2>/dev/null" is to remove model download progress bar
-    yolo $cmd predict model=$model source='./images' device=$device_option 2>/dev/null | awk '$1 == "image" {print $1, $2, $NF}' >> $result_file
+    yolo $cmd predict model=$model source='./images' device=$device_option 2>/dev/null | awk '$1 == "image" {print $1, $2, $NF}' >> ./results/$result_file
     echo "completed!"
 
     echo "<Statistics>"
