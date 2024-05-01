@@ -20,6 +20,10 @@
 ##### How-To
 - host: kvm_run.sh, kvm_monitor.sh, cal_cpu.py
   - ./kvm_run.sh
-- guest: smallrun.sh, cal_inf.py 
+- guest: smallrun.sh, cal_inf.py
+  - smallrun.sh
+    - INF_RESULT_FILENAME=$INF_RESULT_PATH/**kvm**_inf_$1 으로 수
+    - rm inference_results/**kvm*** 으로 수정
+    - python3 **~**/yolo_script/cal_inf.py 으로 수정
 #### FIRECRACKER
 #### KATA CONTAINER
