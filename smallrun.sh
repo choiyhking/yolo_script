@@ -7,6 +7,9 @@ IMG_PATH=/yolo_script/images
 INF_RESULT_PATH=/yolo_script/inference_results
 INF_RESULT_FILENAME=$INF_RESULT_PATH/docker_inf_$1
 
+mkdir inference_results
+rm inference_results/docker*
+
 declare -A command_model_map
 command_model_map["detect"]="yolov8n.pt"
 command_model_map["segment"]="yolov8n-seg.pt"
