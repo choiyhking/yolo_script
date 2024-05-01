@@ -14,8 +14,8 @@ def calculate_statistics(data_file):
             parts = line.strip().split()
             if len(parts) >= 2:
                 try:
-                    # Assuming the second value in each line is a float
-                    value = float(parts[1])
+                    value_str = parts[1].replace(',', '.')
+                    value = float(value_str)
                     if value >= 100:
                         values.append(value)
                 except ValueError:
