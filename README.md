@@ -27,10 +27,8 @@
     - python3 **~**/yolo_script/cal_inf.py 으로 수정
 #### FIRECRACKER
 ##### How-To
-- host: kvm_run.sh, kvm_monitor.sh, cal_cpu.py
-  - ./kvm_run.sh
-  - fc_run.sh, kvm_monitor.sh
-    - username, ip 확인
+- host: fc_run.sh, fc_monitor.sh, cal_cpu.py
+  - ./fc_run.sh
 - guest: smallrun.sh, cal_inf.py
   - root에 git clone
   - sed -i 's/docker/fc/g' smallrun.sh
