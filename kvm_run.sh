@@ -8,6 +8,8 @@ rm cpu_results/kvm*
 
 modes=("classify" "detect" "pose" "segment")
 
+ssh test@192.168.122.225 "cd ~/yolo_script/; mkdir inference_results; rm inference_results/kvm*
+
 for mode in "${modes[@]}"; do
     echo "Start [[${mode}]]..."
     ssh test@192.168.122.225 "~/yolo_script/smallrun.sh $mode" &
