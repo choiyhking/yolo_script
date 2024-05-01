@@ -22,7 +22,7 @@
   - ./kvm_run.sh
 - guest: smallrun.sh, cal_inf.py
   - smallrun.sh
-    - INF_RESULT_FILENAME=$INF_RESULT_PATH/**kvm**_inf_$1 으로 수
+    - INF_RESULT_FILENAME=$INF_RESULT_PATH/**kvm**\_inf\_$1 으로 수정
     - rm inference_results/**kvm*** 으로 수정
     - python3 **~**/yolo_script/cal_inf.py 으로 수정
 #### FIRECRACKER
