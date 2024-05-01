@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # CPU usage monitoring script for yolov8 
-# Usage: ./monitor.sh <yolo task>
+# Usage: ./docker_monitor.sh <yolo task>
 #
 
 
