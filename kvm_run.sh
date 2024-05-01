@@ -10,7 +10,7 @@ modes=("classify" "detect" "pose" "segment")
 
 for mode in "${modes[@]}"; do
     echo "Start [[${mode}]]..."
-    ssh yolo@192.168.122.225 '/yolo_script/smallrun.sh $mode' &
+    ssh yolo@192.168.122.225 "~/yolo_script/smallrun.sh $mode" &
     ./kvm_monitor.sh $mode
     echo "completed!"
 
@@ -18,4 +18,3 @@ for mode in "${modes[@]}"; do
 done
 
 echo "All tasks finished successfully!!"
-
