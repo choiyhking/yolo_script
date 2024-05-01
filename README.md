@@ -20,9 +20,9 @@
 - torch 2.3.0
 - torchvision 0.18.0
 ##### How-To
-- host: native_run.sh, native_monitor.sh, cal_cpu.py, cal_inf.py
-  - ./native_run.sh
-- guest: 
+- host: docker_run.sh, docker_monitor.sh, cal_cpu.py
+  - ./docker_run.sh
+- guest: smallrun.sh, cal_inf.py 
 #### KVM
 #### FIRECRACKER
 #### KATA CONTAINER
