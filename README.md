@@ -26,4 +26,12 @@
     - INF_RESULT_FILENAME=$INF_RESULT_PATH/**kvm**\_inf\_$1 으로 수정
     - python3 **~**/yolo_script/cal_inf.py 으로 수정
 #### FIRECRACKER
+##### How-To
+- host: kvm_run.sh, kvm_monitor.sh, cal_cpu.py
+  - ./kvm_run.sh
+  - fc_run.sh, kvm_monitor.sh
+    - username, ip 확인
+- guest: smallrun.sh, cal_inf.py
+  - root에 git clone
+  - sed -i 's/docker/fc/g' smallrun.sh
 #### KATA CONTAINER
