@@ -17,5 +17,9 @@
   - ./docker_run.sh
 - guest: smallrun.sh, cal_inf.py 
 #### KVM
+##### How-To
+- host: kvm_run.sh, kvm_monitor.sh, cal_cpu.py
+  - ./kvm_run.sh
+- guest: smallrun.sh, cal_inf.py 
 #### FIRECRACKER
 #### KATA CONTAINER
