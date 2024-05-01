@@ -8,8 +8,8 @@
 - torch 2.2.2
 - torchvision 0.17.2
 ##### How-To
-- host: native_script.sh, native_monitor.sh, cal_cpu.py, cal_inf.py
-  - ./native_script.sh
+- host: native_run.sh, native_monitor.sh, cal_cpu.py, cal_inf.py
+  - ./native_run.sh
  
 #### DOCKER
 #### KVM
