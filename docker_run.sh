@@ -12,6 +12,7 @@ run_yolo_script() {
   sudo docker stop $container_name >/dev/null 2>&1
 }
 
+mkdir cpu_results
 rm cpu_results/docker*
 
 SCRIPT_PATH=/yolo_script
