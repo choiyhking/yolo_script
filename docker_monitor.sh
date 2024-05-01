@@ -4,7 +4,7 @@
 # Usage: ./docker_monitor.sh <yolo task>
 #
 
-
+container_name="yolo-docker"
 output_file="docker_cpu_$1"
 count=0
 
