@@ -11,7 +11,7 @@ count=0
 while true; do
     let count+=1
      
-    if ! sudo docker exec $container_name ps aux | grep -q [y]olo; then
+    if ! sudo docker exec $container_name ps aux | grep -q yolo; then
 	    break;
     fi
    
