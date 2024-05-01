@@ -17,6 +17,8 @@
 ##### How-To
 - host: kvm_run.sh, kvm_monitor.sh, cal_cpu.py
   - ./kvm_run.sh
+  - kvm_run.sh, kvm_monitor.sh
+    - username, ip 확인
 - guest: smallrun.sh, cal_inf.py
   - smallrun.sh
     - INF_RESULT_FILENAME=$INF_RESULT_PATH/**kvm**\_inf\_$1 으로 수정
