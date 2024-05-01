@@ -18,6 +18,13 @@
 
 ## Jetson Nano
 #### NATIVE
+##### Environment
+- Ubuntu 20.04
+- 4.9.253
+- Python 3.8.10
+- YOLOv8.2.5
+- torch 1.13.0a0+git7c98e7
+- torchvision 0.14.0a0+5ce4506
 #### DOCKER
 #### KVM
 #### FIRECRACKER
