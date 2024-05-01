@@ -5,7 +5,7 @@
 #
 
 
-output_file="dokcer_cpu_$1"
+output_file="docker_cpu_$1"
 count=0
 
 while true; do
