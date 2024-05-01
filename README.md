@@ -1,7 +1,4 @@
 #### Environment
-- Ubuntu 22.04
-- Linux 5.15.0-1053
-- Python 3.10.12
 - YOLOv8.2.2
 - torch 2.2.2
 - torchvision 0.17.2
