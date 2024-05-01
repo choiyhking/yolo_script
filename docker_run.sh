@@ -28,7 +28,7 @@ modes=("classify" "detect" "pose" "segment")
 for mode in "${modes[@]}"; do
   echo "Start container..."
   sudo docker start $container_name >/dev/null 2>&1
-  sleep 3
+  sleep 5
   echo $mode
   run_yolo_script "$mode"
   sleep 5
