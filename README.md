@@ -2,7 +2,7 @@
 #### NATIVE
 ##### Environment
 - Ubuntu 22.04
-- 5.15.0-1053
+- Linux 5.15.0-1053
 - Python 3.10.12
 - YOLOv8.2.2
 - torch 2.2.2
@@ -14,7 +14,7 @@
 #### DOCKER
 ##### Environment
 - Ubuntu 22.04
-- 5.15.0-1053
+- Linux 5.15.0-1053
 - Python 3.10.12
 - YOLOv8.2.2
 - torch 2.3.0
