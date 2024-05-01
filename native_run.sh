@@ -10,10 +10,8 @@ command_model_map["segment"]="yolov8n-seg.pt"
 command_model_map["classify"]="yolov8n-cls.pt"
 command_model_map["pose"]="yolov8n-pose.pt"
 
-
-rm inference_results/native* cpu_results/native*
 mkdir inference_results cpu_results
-
+rm inference_results/native* cpu_results/native*
 
 for cmd in "${!command_model_map[@]}"; do
     model=${command_model_map[$cmd]}
