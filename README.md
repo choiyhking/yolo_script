@@ -7,7 +7,7 @@
 - YOLOv8.2.2
 - torch 2.2.2
 - torchvision 0.17.2
-##### HOW-TO
+##### How-to
 - host: native_script.sh, native_monitor.sh, cal_cpu.py, cal_inf.py
   - ./native_script.sh
  
