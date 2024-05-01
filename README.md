@@ -12,6 +12,17 @@
   - ./native_run.sh
  
 #### DOCKER
+##### Environment
+- Ubuntu 22.04
+- 5.15.0-1053
+- Python 3.10.12
+- YOLOv8.2.2
+- torch 2.3.0
+- torchvision 0.18.0
+##### How-To
+- host: native_run.sh, native_monitor.sh, cal_cpu.py, cal_inf.py
+  - ./native_run.sh
+- guest: 
 #### KVM
 #### FIRECRACKER
 #### KATA CONTAINER
