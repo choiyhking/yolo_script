@@ -10,7 +10,7 @@ modes=("classify" "detect" "pose" "segment")
 
 for mode in "${modes[@]}"; do
     echo "Start [[${mode}]]..."
-    ssh root@127.16.0.2 '/yolo_script/smallrun.sh $1' &
+    ssh root@127.16.0.2 "/yolo_script/smallrun.sh $mode" &
     ./kata_monitor.sh $mode
     echo "completed!"
 
