@@ -12,13 +12,6 @@
   - ./native_run.sh
  
 #### DOCKER
-##### Environment
-- Ubuntu 22.04
-- Linux 5.15.0-1053
-- Python 3.10.12
-- YOLOv8.2.2
-- torch 2.3.0
-- torchvision 0.18.0
 ##### How-To
 - host: docker_run.sh, docker_monitor.sh, cal_cpu.py
   - ./docker_run.sh
