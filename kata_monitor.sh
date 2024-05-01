@@ -12,7 +12,7 @@ while true; do
     
     usage=$(top -b -n 1 | grep qemu-system-aar | head -n 1 | awk '{print $9}')
 
-    if ! ssh root@172.16.0.2 'ps aux | grep [y]olo'; then
+    if ! ssh root@172.16.0.2 'ps aux | grep -q [y]olo'; then
       break;
     fi
 
