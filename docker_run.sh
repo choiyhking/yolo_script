@@ -7,7 +7,6 @@ container_name="yolo-docker"
 
 run_yolo_script() {
   sudo docker exec $container_name /bin/bash -c "$SCRIPT_PATH/smallrun.sh $1" &
-  sleep 1
   ./monitor.sh $1 # this script will finish when yolo process finished
   echo "Stop container..."
   sudo docker stop $container_name >/dev/null 2>&1
@@ -15,7 +14,7 @@ run_yolo_script() {
 
 rm cpu_results/docker*
 
-SCRIPT_PATH=/usr/src/ultralytics/yolo_script
+SCRIPT_PATH=/yolo_script
 INF_RESULT_PATH=$SCRIPT_PATH/inference_results
 INF_RESULT_FILENAME=$INF_RESULT_PATH/docker_inf_$1
 
