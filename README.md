@@ -21,8 +21,9 @@
     - username, ip 확인
 - guest: smallrun.sh, cal_inf.py
   - smallrun.sh
+    - IMG_PATH=**~**/yolo_script/images 으로 수정
+    - INF_RESULT_PATH=**~**/yolo_script/inference_results 으로 수정
     - INF_RESULT_FILENAME=$INF_RESULT_PATH/**kvm**\_inf\_$1 으로 수정
-    - rm inference_results/**kvm*** 으로 수정
     - python3 **~**/yolo_script/cal_inf.py 으로 수정
 #### FIRECRACKER
 #### KATA CONTAINER
