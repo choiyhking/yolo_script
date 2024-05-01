@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Usage: ./native_script.sh
+# Usage: ./native_run.sh
 #
 
 # create key-value map
