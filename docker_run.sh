@@ -19,9 +19,9 @@ SCRIPT_PATH=/yolo_script
 INF_RESULT_PATH=$SCRIPT_PATH/inference_results
 INF_RESULT_FILENAME=$INF_RESULT_PATH/docker_inf_$1
 
-sudo docker start $container_name >/dev/null 2>&1
-sudo docker exec $container_name /bin/bash -c "mkdir $INF_RESULT_PATH; rm -rf $INF_RESULT_PATH/*"
-sudo docker stop $container_name >/dev/null 2>&1
+#sudo docker start $container_name >/dev/null 2>&1
+#sudo docker exec $container_name /bin/bash -c "mkdir $INF_RESULT_PATH; rm -rf $INF_RESULT_PATH/*"
+#sudo docker stop $container_name >/dev/null 2>&1
 
 modes=("classify" "detect" "pose" "segment")
 
