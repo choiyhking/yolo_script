@@ -2,7 +2,7 @@
 #### NATIVE
 ##### Environment
 - Ubuntu 22.04
-- 5.15.0-1053-raspi
+- 5.15.0-1053
 - Python 3.10.12
 - YOLOv8.2.2
 - torch 2.2.2
