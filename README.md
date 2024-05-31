@@ -17,7 +17,7 @@
 
 ### KVM
 ##### Environment
-- kernel:
+- kernel: 5.15.0-105
 ##### How-To
 - guest VM start
 - username, ip 확인
