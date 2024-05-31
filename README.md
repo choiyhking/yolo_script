@@ -9,12 +9,12 @@
 ##### Environment
 - kernel: 5.15.0-1055
 ##### How-To
-- host: ./native_run.sh
+- ./native_run.sh
 
 ### DOCKER
 ##### How-To
 - `sudo docker update --memory 4gb --memory-swap 4gb yolo-docker`
-- host: ./docker_run.sh
+- ./docker_run.sh
 
 ### KVM
 ##### Environment
