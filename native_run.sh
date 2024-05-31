@@ -1,29 +1,28 @@
 #!/bin/bash
 #
-# Usage: ./native_run.sh
+# Usage: ./native_run.sh 
 #
 
-# create key-value map
-declare -A command_model_map
-command_model_map["classify"]="yolov8n-cls.pt"
-command_model_map["detect"]="yolov8n.pt"
-command_model_map["pose"]="yolov8n-pose.pt"
-command_model_map["segment"]="yolov8n-seg.pt"
-command_model_map["obb"]="yolov8n-obb.pt"
+declare -A model_map
+model_map["classify"]="yolov8n-cls.pt"
+model_map["detect"]="yolov8n.pt"
+model_map["pose"]="yolov8n-pose.pt"
+model_map["segment"]="yolov8n-seg.pt"
+model_map["obb"]="yolov8n-obb.pt"
 
-mkdir inference_results pid_cpu_results
-rm inference_results/native* pid_cpu_results/native*
+mkdir inference_results cpu_results
+rm inference_results/native* cpu_results/native*
 
-for cmd in "${!command_model_map[@]}"; do
-    model=${command_model_map[${cmd}]}
-    inf_result_file="native_inf_${cmd}"
+for task in "${!model_map[@]}"; do
+    model=${model_map[${task}]}
+    inf_result_file="native_inf_${task}"
     
     echo "Start monitoring..."
-    ./native_monitor.sh ${cmd} &
+    ./monitor.sh native ${task} &
 
-    echo "Start [[${cmd}]]..."
+    echo "Start [[${task}]]"
     # "2>/dev/null" is to remove model download progress bar
-    yolo ${cmd} predict model=${model} source='./images' device=cpu 2>/dev/null | awk '$1 == "image" {print $1, $2, $NF}' >> ./inference_results/${inf_result_file}
+    yolo ${task} predict model=${model} source='./images' device=cpu 2>/dev/null | awk '$1 == "image" {print $1, $2, $NF}' >> ./inference_results/${inf_result_file}
    
     
     sleep 3 # sleep for monitoring script 

@@ -1,23 +1,22 @@
 #!/bin/bash
 #
-# Usage: ./fc_run.sh
+# Usage: ./fc_run.sh <environment>
 #
 
 mkdir cpu_results
 rm cpu_results/fc*
 
-modes=("classify" "detect" "pose" "segment")
+tasks=("classify" "detect" "pose" "segment" "obb")
 
-ssh -i ubuntu-22.04.id_rsa root@172.16.0.2 "cd /yolo_script/; mkdir inference_results; rm inference_results/fc*"
+ssh -i ubuntu-22.04.id_rsa root@172.16.0.2 "cd /yolo_script/; mkdir inference_results; rm inference_results/*"
 
-for mode in "${modes[@]}"; do
-    echo "Start [[${mode}]]..."
-    ssh -i ubuntu-22.04.id_rsa root@172.16.0.2 "/yolo_script/smallrun.sh $mode" &
-    ./fc_monitor.sh $mode
+for mode in "${tasks[@]}"; do
+    echo "Start [[${task}]]..."
+    ssh -i ubuntu-22.04.id_rsa root@172.16.0.2 "/yolo_script/smallrun.sh ${task}" &
+    ./monitor.sh fc ${task}
     echo "completed!"
 
     sleep 10   
 done
 
 echo "All tasks finished successfully!!"
-

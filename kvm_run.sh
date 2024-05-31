@@ -6,14 +6,14 @@
 mkdir cpu_results
 rm cpu_results/kvm*
 
-modes=("classify" "detect" "pose" "segment")
+tasks=("classify" "detect" "pose" "segment" "obb")
 
-ssh test@192.168.122.225 "cd ~/yolo_script/; mkdir inference_results; rm inference_results/kvm*
+ssh pi@192.168.122.45 "cd ~/yolo_script/; mkdir inference_results; rm inference_results/kvm*"
 
-for mode in "${modes[@]}"; do
-    echo "Start [[${mode}]]..."
-    ssh test@192.168.122.225 "~/yolo_script/smallrun.sh $mode" &
-    ./kvm_monitor.sh $mode
+for task in "${tasks[@]}"; do
+    echo "Start [[${task}]]..."
+    ssh pi@192.168.122.45 "~/yolo_script/smallrun.sh ${task}" &
+    ./monitor.sh kvm ${task}
     echo "completed!"
 
     sleep 10   

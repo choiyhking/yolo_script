@@ -7,7 +7,7 @@ container_name="yolo-docker"
 
 run_yolo_script() {
   sudo docker exec $container_name /bin/bash -c "$SCRIPT_PATH/smallrun.sh $1" &
-  ./docker_monitor.sh $1 # this script will finish when yolo process finished
+  ./monitor.sh docker $1 
   echo "Stop container..."
   sudo docker stop $container_name >/dev/null 2>&1
 }
@@ -17,19 +17,19 @@ rm cpu_results/docker*
 
 SCRIPT_PATH=/yolo_script
 INF_RESULT_PATH=$SCRIPT_PATH/inference_results
-INF_RESULT_FILENAME=$INF_RESULT_PATH/docker_inf_$1
 
 sudo docker start $container_name >/dev/null 2>&1
 sudo docker exec $container_name /bin/bash -c "mkdir $INF_RESULT_PATH; rm -rf $INF_RESULT_PATH/*"
 sudo docker stop $container_name >/dev/null 2>&1
 
-modes=("classify" "detect" "pose" "segment")
+tasks=("classify" "detect" "pose" "segment" "obb")
 
-for mode in "${modes[@]}"; do
+for mode in "${tasks[@]}"; do
   echo "Start container..."
   sudo docker start $container_name >/dev/null 2>&1
-  sleep 5
-  echo $mode
-  run_yolo_script "$mode"
-  sleep 5
+  echo "[[${task}]]"
+  run_yolo_script ${task}
+  sleep 10
 done
+
+echo "All tasks finished successfully!!"
