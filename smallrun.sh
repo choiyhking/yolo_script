@@ -3,7 +3,7 @@
 # Usage: ./smallrun.sh <environment> <yolo task>
 #
 
-INF_RESULT_FILENAME=/inference_results/"$1_inf_$2"
+INF_RESULT_FILENAME=./inference_results/"$1_inf_$2"
 
 declare -A model_map
 model_map["classify"]="yolov8n-cls.pt"
