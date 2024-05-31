@@ -13,12 +13,14 @@
 
 ### DOCKER
 ##### How-To
+- `sudo docker update --memory 2gb --memory-swap 2gb yolo-docker`
 - host: ./docker_run.sh
 
 ### KVM
 ##### Environment
-- kernel: 5.15.0-105
+- kernel: 5.15.0-107
 ##### How-To
+- `virsh edit test-vm`
 - guest VM start
 - username, ip 확인
 - ./kvm_run.sh
@@ -27,6 +29,7 @@
 ##### Environment
 - kernel:
 ##### How-To
+- edit `vm_config.json`
 - firecracker microVM start
 - username, ip 확인
 - ./fc_run.sh
@@ -35,6 +38,7 @@
 ##### Environment
 - kernel:
 ##### How-To
+- edit `/etc/kata-containers/configuration.toml`
 - kata container start(using docker command)
 - username, ip 확인
 - ./kata_run.sh
