@@ -1,8 +1,9 @@
-### Common Environment
+### Check List
 - YOLO 8.2.2
 - torch 2.2.2
 - torchvision 0.17.2
-- memory size should half of the host
+- opencv-python 4.9.0.80
+- memory size should be half of the host size!!
 
 ### NATIVE
 ##### Environment
