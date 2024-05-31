@@ -12,7 +12,7 @@ ssh pi@192.168.122.45 "cd ~/yolo_script/; mkdir inference_results; rm inference_
 
 for task in "${tasks[@]}"; do
     echo "Start [[${task}]]..."
-    ssh pi@192.168.122.45 "~/yolo_script/smallrun.sh kvm ${task}" &
+    ssh test@192.168.122.239 "~/yolo_script/smallrun.sh kvm ${task}" &
     ./monitor.sh kvm ${task}
     echo "completed!"
 
