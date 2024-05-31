@@ -12,7 +12,7 @@ sshpass -p '1' ssh -o 'StrictHostKeyChecking=no' test@192.168.122.239 "cd ~/yolo
 
 for task in "${tasks[@]}"; do
     echo "Start [[${task}]]..."
-    sshpass -p '1' ssh -o 'StrictHostKeyChecking=no' test@192.168.122.239 "~/yolo_script/smallrun.sh kvm ${task}" &
+    sshpass -p '1' ssh -o 'StrictHostKeyChecking=no' test@192.168.122.239 "export PATH=/home/test/.local/bin:$PATH; cd ~/yolo_script; ./smallrun.sh kvm ${task}" &
     ./monitor.sh kvm ${task}
     echo "completed!"
 
