@@ -3,7 +3,7 @@
 - torch 2.2.2
 - torchvision 0.17.2
 - opencv-python 4.9.0.80
-- memory size should be half of the host size!!
+- guest memory size should be half of the host size!!
 
 ### NATIVE
 ##### Environment
