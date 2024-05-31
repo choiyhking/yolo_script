@@ -3,7 +3,7 @@
 # Usage: ./smallrun.sh <environment> <yolo task>
 #
 
-INF_RESULT_FILENAME=./inference_results/"$1_inf_$2"
+INF_RESULT_FILE=./inference_results/"$1_inf_$2"
 
 declare -A model_map
 model_map["classify"]="yolov8n-cls.pt"
@@ -14,10 +14,10 @@ model_map["obb"]="yolov8n-obb.pt"
 
 model=${model_map[$2]}
 
-yolo $2 predict model=${model} source=./images device=cpu 2>/dev/null | awk '$1 == "image" {print $1, $2, $NF}' >> ${INF_RESULT_FILENAME}
+yolo $2 predict model=${model} source=./images device=cpu 2>/dev/null | awk '$1 == "image" {print $1, $2, $NF}' >> ${INF_RESULT_FILE}
 
 echo "<Inference statistics>"
-stats=$(python3 /yolo_script/cal_inf.py ${INF_RESULT_FILENAME})
-echo "${stats}" >> "${INF_RESULT_FILENAME}"
+stats=$(python3 cal_inf.py ${INF_RESULT_FILE})
+echo "${stats}" >> ${INF_RESULT_FILE}
 echo "${stats}"
 echo ""
