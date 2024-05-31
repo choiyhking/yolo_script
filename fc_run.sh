@@ -12,7 +12,7 @@ ssh -i ubuntu-22.04.id_rsa root@172.16.0.2 "cd /yolo_script/; mkdir inference_re
 
 for mode in "${tasks[@]}"; do
     echo "Start [[${task}]]..."
-    ssh -i ubuntu-22.04.id_rsa root@172.16.0.2 "/yolo_script/smallrun.sh ${task}" &
+    ssh -i ubuntu-22.04.id_rsa root@172.16.0.2 "/yolo_script/smallrun.sh fc ${task}" &
     ./monitor.sh fc ${task}
     echo "completed!"
 
