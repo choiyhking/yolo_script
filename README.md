@@ -13,7 +13,7 @@
 
 ### DOCKER
 ##### How-To
-- `sudo docker update --memory 2gb --memory-swap 2gb yolo-docker`
+- `sudo docker update --memory 4gb --memory-swap 4gb yolo-docker`
 - host: ./docker_run.sh
 
 ### KVM
