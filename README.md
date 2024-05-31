@@ -2,6 +2,7 @@
 - YOLO 8.2.2
 - torch 2.2.2
 - torchvision 0.17.2
+- memory size should half of the host
 
 ### NATIVE
 ##### Environment
