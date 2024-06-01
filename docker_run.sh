@@ -6,7 +6,7 @@
 container_name="yolo-docker"
 
 do_smallrun() {
-  sudo docker exec $container_name /bin/bash -c "/yolo_script/smallrun.sh docker $1" &
+  sudo docker exec $container_name /bin/bash -c "cd /yolo_script; ./smallrun.sh docker $1" &
   ./monitor.sh docker $1 
   #echo "Stop container..."
   sudo docker stop $container_name >/dev/null 2>&1
