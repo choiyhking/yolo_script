@@ -12,8 +12,8 @@ do_smallrun() {
   sudo docker stop $container_name >/dev/null 2>&1
 }
 
-mkdir cpu_results
-rm cpu_results/docker*
+mkdir cpu_results 2>/dev/null
+rm cpu_results/docker* 2>/dev/null
 
 INF_RESULT_PATH=/yolo_script/inference_results
 
