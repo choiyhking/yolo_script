@@ -17,7 +17,6 @@ for task in "${!model_map[@]}"; do
     model=${model_map[${task}]}
     inf_result_file="native_inf_${task}"
     
-    echo "Start monitoring..."
     ./monitor.sh native ${task} &
 
     echo "Start [[${task}]]"
