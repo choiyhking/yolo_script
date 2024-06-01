@@ -10,8 +10,8 @@ model_map["pose"]="yolov8n-pose.pt"
 model_map["segment"]="yolov8n-seg.pt"
 model_map["obb"]="yolov8n-obb.pt"
 
-mkdir inference_results cpu_results
-rm inference_results/native* cpu_results/native*
+mkdir inference_results cpu_results 2>/dev/null
+rm inference_results/native* cpu_results/native* 2>/dev/null
 
 for task in "${!model_map[@]}"; do
     model=${model_map[${task}]}
