@@ -24,7 +24,7 @@ sudo docker stop $container_name >/dev/null 2>&1
 
 tasks=("classify" "detect" "pose" "segment" "obb")
 
-for mode in "${tasks[@]}"; do
+for task in "${tasks[@]}"; do
   echo "Start container..."
   sudo docker start $container_name >/dev/null 2>&1
   echo "[[${task}]]"
