@@ -27,7 +27,7 @@
   
 ### FIRECRACKER
 ##### Environment
-- kernel:
+- kernel: 5.10.198
 ##### How-To
 - edit `vm_config.json`
 - firecracker microVM start
