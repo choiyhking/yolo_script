@@ -39,6 +39,6 @@
 - kernel:
 ##### How-To
 - edit `/etc/kata-containers/configuration.toml`
-- kata container start(using docker command)
+- kata container start
 - username, ip 확인
 - ./kata_run.sh
