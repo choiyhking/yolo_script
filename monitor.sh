@@ -26,6 +26,7 @@ eval ${setting_map[$2]}
 ITER=3	
 sum=0
 
+echo "Start CPU monitoring..."
 for i in $(seq ${ITER})
 do
 	pid_result=$(pidstat -p $(pgrep ${PNAME}) ${TIME_SLICE} 1 &)
