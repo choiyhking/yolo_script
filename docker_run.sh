@@ -5,30 +5,30 @@
 
 container_name="yolo-docker"
 
-run_yolo_script() {
-  sudo docker exec $container_name /bin/bash -c "$SCRIPT_PATH/smallrun.sh docker $1" &
+do_smallrun() {
+  sudo docker exec $container_name /bin/bash -c "/yolo_script/smallrun.sh docker $1" &
   ./monitor.sh docker $1 
-  echo "Stop container..."
+  #echo "Stop container..."
   sudo docker stop $container_name >/dev/null 2>&1
 }
 
 mkdir cpu_results
 rm cpu_results/docker*
 
-SCRIPT_PATH=/yolo_script
-INF_RESULT_PATH=$SCRIPT_PATH/inference_results
+INF_RESULT_PATH=/yolo_script/inference_results
 
 sudo docker start $container_name >/dev/null 2>&1
 sudo docker exec $container_name /bin/bash -c "mkdir $INF_RESULT_PATH; rm -rf $INF_RESULT_PATH/*"
 sudo docker stop $container_name >/dev/null 2>&1
+sleep 10
 
 tasks=("classify" "detect" "pose" "segment" "obb")
 
 for task in "${tasks[@]}"; do
-  echo "Start container..."
+  #echo "Start container..."
   sudo docker start $container_name >/dev/null 2>&1
-  echo "[[${task}]]"
-  run_yolo_script ${task}
+  echo "Start [[${task}]]"
+  do_smallrun ${task}
   sleep 10
 done
 
