@@ -3,18 +3,17 @@
 # Usage: ./fc_run.sh <environment>
 #
 
-mkdir cpu_results
-rm cpu_results/fc*
+mkdir cpu_results 2>/dev/null
+rm cpu_results/fc* 2>/dev/null
 
 tasks=("classify" "detect" "pose" "segment" "obb")
 
-ssh -i ubuntu-22.04.id_rsa root@172.16.0.2 "cd /yolo_script/; mkdir inference_results; rm inference_results/*"
+ssh -i ubuntu-22.04.id_rsa root@172.16.0.2 "cd /yolo_script/; mkdir inference_results 2>/dev/null; rm inference_results/* 2>/dev/null"
 
 for task in "${tasks[@]}"; do
-    echo "Start [[${task}]]..."
+    echo "Start [[${task}]]"
     ./monitor.sh fc ${task} &
-    ssh -i ubuntu-22.04.id_rsa root@172.16.0.2 "/yolo_script/smallrun.sh fc ${task}"
-    echo "completed!"
+    ssh -i ubuntu-22.04.id_rsa root@172.16.0.2 "export PATH=/usr/local/bin:$PATH; cd /yolo_script; ./smallrun.sh fc ${task}"
 
     sleep 10   
 done
