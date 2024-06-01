@@ -18,7 +18,7 @@ rm cpu_results/docker* 2>/dev/null
 INF_RESULT_PATH=/yolo_script/inference_results
 
 sudo docker start $container_name >/dev/null 2>&1
-sudo docker exec $container_name /bin/bash -c "mkdir $INF_RESULT_PATH 2>/dev/null; rm -rf $INF_RESULT_PATH/* 2>/dev/null"
+sudo docker exec $container_name /bin/bash -c "mkdir $INF_RESULT_PATH >/dev/null 2>&1; rm -rf $INF_RESULT_PATH/* >/dev/null 2>&1"
 sudo docker stop $container_name >/dev/null 2>&1
 sleep 10
 
