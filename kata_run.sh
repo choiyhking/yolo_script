@@ -12,7 +12,7 @@ tasks=("classify" "detect" "pose" "segment" "obb")
 
 for task in "${tasks[@]}"; do
     echo "Start [[${task}]]"
-    ./kata_monitor.sh ${task} &
+    ./monitor.sh ${task} &
     ssh root@127.16.0.2 "export PATH=/usr/local/bin:$PATH; cd /yolo_script; ./smallrun.sh kata ${task}"
 
     sleep 10   
