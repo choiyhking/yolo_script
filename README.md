@@ -35,8 +35,6 @@
 - ./fc_run.sh
 
 ### KATA CONTAINER
-##### Environment
-- kernel:
 ##### How-To
 - edit `/etc/kata-containers/configuration.toml`
 - kata container start
